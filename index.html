@@ -238,7 +238,56 @@ footer {
     order: -1;
   }
 }
+
+/* ------------------------------
+   MICROSOFT STORE BADGE + TRUST
+------------------------------ */
+.ksp-store-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  align-items: center;
+  margin-top: 0.9rem;
+}
+
+.ksp-store-badges ms-store-badge::part(img) {
+  max-height: 52px;
+}
+
+.ksp-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 0.65rem;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.ksp-trust .trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.04);
+}
+
+.ksp-trust .trust-icon {
+  color: #6be28d;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+
+.ms-store-fallback {
+  display: inline-block;
+}
+
 </style>
+
+<script type="module" src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"></script>
 </head>
 
 <body>
@@ -272,9 +321,23 @@ footer {
       </ul>
 
       <div class="ksp-cta-row">
-        <button class="ksp-btn-primary">Available Soon!</button></p>
-        <div class="ksp-cta-note">Set-and-forget scheduling keeps your browsers protected.</div>
+                <div class="ksp-cta-note">Set-and-forget scheduling keeps your browsers protected.</div>
       </div>
+      <div class="ksp-store-badges" aria-label="Microsoft Store badges">
+        <ms-store-badge productid="9NVVWG72G4LR" window-mode="full" theme="light"></ms-store-badge>
+
+        <a href="https://apps.microsoft.com/detail/9NVVWG72G4LR" class="ms-store-fallback" aria-label="Get it from Microsoft Store">
+          <img src="https://get.microsoft.com/images/en-us%20dark.svg" alt="Get it from Microsoft Store" style="height:52px;">
+        </a>
+
+      </div>
+
+      <div class="ksp-trust" aria-label="Trust indicators">
+        <span class="trust-pill"><span class="trust-icon">✓</span>Official Microsoft Store listing</span>
+                <span class="trust-pill"><span class="trust-icon">✓</span>No cloud, no accounts</span>
+        <span class="trust-pill"><span class="trust-icon">✓</span>Automatic updates via Microsoft Store</span>
+      </div>
+
     </div>
 
     <div class="hero-screenshot">
@@ -282,7 +345,23 @@ footer {
     </div>
   </section>
 
-  <h2 class="section-heading">Why KSP Browser Backup?</h2>
+  
+  <!-- Browser Restore Comparison -->
+  <section class="browser-compare" style="margin-top:3rem;">
+    <h2 class="section-heading">Your Browser — Back Exactly the Same</h2>
+    <p style="color: var(--text-muted); max-width: 38rem; line-height:1.6; margin-bottom:1.2rem;">
+      See the difference between a fresh browser install and a browser fully restored with KSP Browser Backup.
+      Every detail comes back — themes, bookmarks, passwords, extensions, and settings.
+    </p>
+    <div style="border-radius: var(--radius-lg); overflow:hidden; border:1px solid var(--border-soft); box-shadow: var(--shadow-soft);">
+      <img src="browser-restore-comparison.png"
+           alt="New browser install compared to browser restored with KSP Browser Backup"
+           style="width:100%; height:auto; display:block;">
+    </div>
+  </section>
+
+
+<h2 class="section-heading">Why KSP Browser Backup?</h2>
 
   <section class="features-grid">
 
